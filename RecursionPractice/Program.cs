@@ -25,20 +25,33 @@ namespace RecursionPractice
 
                 //Equation : n * (n-1)
                 Console.WriteLine("Please enter a number! Any number!");
-                Console.WriteLine();
+         
 
                 userInput = double.Parse(Console.ReadLine());
 
-
-                for (double i = userInput; i > 0; i--)
+                if (userInput > 1)
                 {
-                    factorial = userInput * (userInput - 1);  // This is the recursive call 
+
+                    for (double i = userInput; i > 0; i--)
+                    {
+                        factorial = userInput * (userInput - 1);  // This is the recursive call 
+                    }
+                    Console.WriteLine($"The factorial of  {userInput} is  {factorial} ");
                 }
 
-                    Console.WriteLine($"The factorial of  {userInput} is  {factorial} ");
+               if (userInput == 1)
+                {
+                    Console.WriteLine($"The factorial of  {userInput} is  {userInput} ");
+                }
+
+                if (userInput == 0)
+                {
+                    Console.WriteLine("There is no such thing as the factorial of 0! ");
+                    Console.WriteLine("Please try again!");
+                }
 
 
-                 run = Continue();
+                run = Continue();
 
            }
         }
